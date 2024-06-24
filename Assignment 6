@@ -1,0 +1,37 @@
+#Part 1: Try the code below and revise it to current time. 
+
+from datetime import datetime, timedelta
+import sys
+
+def Transaction():
+
+    for line in sys.stdin:
+        data = line.strip().split("\t")
+
+    if len(data) == 4:
+        store, item, cost, payment = data
+    
+        print (f"{datetime.now().date}\t{datetime.now().time()}\t{store}\t{item}\t{cost}\t{payment}")
+
+#Part 2: Add the timedelta to the datetime and subtract 60 second and added 2 year . (Hit: timedelta(seconds=60))  For each condition, state the code and output.
+
+def Back2Future(date):
+    tt = timedelta(seconds=-20, days=730)
+    return date + tt
+
+print(Back2Future(datetime.now()).strftime('%A, %B %d %Y at %I:%M:%S %p'))
+
+#Part 3: Create a timedelta object representing 100 days, 10 hours, and 13 minutes.
+
+def Back2Future2(date):
+    tt = timedelta(minutes=13, hours=10, days=100)
+    return date + tt
+
+print(Back2Future2(datetime.now()).strftime('%A, %B %d %Y at %I:%M:%S %p'))
+
+#Part 4: Write a function that takes two arguments (feet and inches) with this time object
+
+def size(feet, inches):
+    print(f'{datetime.now().date()}, {feet}, {inches}')
+
+size(1, 2)
